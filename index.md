@@ -2,8 +2,8 @@
 layout: home
 ...
 
-## Control de máquinas eléctricas con Matlab
-### Contenido
+Bienvenidos al curso de **Control de máquinas eléctricas con Matlab**. 
+## Contenido
 
 1. Control digital para motores
 2. Control de velocidad en lazo abierto de motores de CD
