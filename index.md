@@ -1,9 +1,8 @@
 ---
-layout: post
+layout: default
 title:  Control de máquinas eléctricas
 ...
 
-## Control de máquinas eléctricas
 ### Contenido
 
 1. Control digital para motores
