@@ -1,6 +1,5 @@
 ---
 title: Fundamentos de control discreto
-author: Gastón Hugo Salazar Silva
 layout: post
 lang: es
 ...
