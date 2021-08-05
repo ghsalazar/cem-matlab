@@ -40,35 +40,35 @@ pasa por un **acondicionador de señal**. Más aún, en un sistema de control
 discreto, el acondicionador de señal debe filtrar la señal por consideración a la
 [frecuencia de muestreo](https://es.wikipedia.org/wiki/Frecuencia_de_muestreo).
 
-Para la siguiente etapa, tenemos dos posibilidades: realizar la resta de la
-variable de referencia y la variable controlada antes o después de convertir la
-señal a digital. Optamos por hacerlo antes, ya que esta operación se
-puede incluir con un [amplificador
+Posteriormente se debe comprar la variable de referencia y la variable
+controlada. Esto se puede realizar antes o después de convertir la señal a
+digital. Optamos por hacerlo antes, ya que esta operación se puede incluir con
+un [amplificador
 diferencial](https://hetpro-store.com/TUTORIALES/amplificador-diferencial/) en
 el acondicionador de señal. Además, reduce el número de convertidores
 analógicos--digitales.
 
-Por consiguiente, la siguiente etapa es el [convertidor
-análogo--digital](https://es.wikipedia.org/wiki/Conversor_de_se%C3%B1al_anal%C3%B3gica_a_digital)
+Por consiguiente, la siguiente etapa es el [**convertidor
+análogo--digital**](https://es.wikipedia.org/wiki/Conversor_de_se%C3%B1al_anal%C3%B3gica_a_digital)
 (ADC, por sus siglas en inglés), donde la señal analógica se cuantifica, es
 decir que obtenemos un valor en binario a partir del valor analógico. Además,
 como el proceso tarda un tiempo, se empieza introducir el tema de la latencia o
 retardo. Por otro lado, el valor obtenido está en la representación de [punto
 fijo](https://es.wikipedia.org/wiki/Coma_fija).
 
-En el **procesador digital** es donde se ejecuta el programa que implementa la
-ley de control. La velocidad con que se ejecuta el programa introduce nuevas
-latencias o retardos e impone un límite superior sobre la frecuencia de muestreo
-máxima posible. Por ello tenemos que se usan
-[microcontroladores](https://es.wikipedia.org/wiki/Microcontrolador)
-en aplicaciones que manejan frecuencias bajas de muestreo, y [procesadores
+En el **procesador digital** se ejecuta el programa que implementa la ley de
+control. La velocidad con que se ejecuta el programa introduce nuevas latencias
+o retardos e impone un límite superior sobre la frecuencia de muestreo máxima
+posible. Por ello tenemos que se usan
+[microcontroladores](https://es.wikipedia.org/wiki/Microcontrolador) en
+aplicaciones que manejan frecuencias bajas de muestreo, y [procesadores
 digitales de
 señales](https://es.wikipedia.org/wiki/Procesador_de_se%C3%B1ales_digitales)
 cuando se requieren altas frecuencias de muestreo.
 
 Una vez procesada la señal discreta, se debe transformar nuevamente a una señal
-analógica, lo cual se hace por medio de un [convertidor
-digital--análogo](https://es.wikipedia.org/wiki/Conversor_de_se%C3%B1al_digital_a_anal%C3%B3gica)
+analógica, lo cual se hace por medio de un [**convertidor
+digital--análogo**](https://es.wikipedia.org/wiki/Conversor_de_se%C3%B1al_digital_a_anal%C3%B3gica)
 (DAC, por sus siglas en inglés). En ocasiones se sustituye la señal analógica
 por un algún tipo de señal modulada, por ejemplo a través un modulador de ancho
 de pulso (PWM, por sus siglas en inglés), ya que posiblemente la etapa de
