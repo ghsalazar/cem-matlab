@@ -1,6 +1,6 @@
 ---
 title: Transformación bilineal o transformación de Tustin
-layout: default
+layout: post
 lang: es
 ...
 
