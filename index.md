@@ -3,7 +3,8 @@ layout: home
 title:  Control de máquinas eléctricas
 ...
 
-## Contenido
+## Control de máquinas eléctricas
+### Contenido
 
 1. Control digital para motores
 2. Control de velocidad en lazo abierto de motores de CD
