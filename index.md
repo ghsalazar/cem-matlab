@@ -1,8 +1,8 @@
 ---
 layout: home
-title:  Control de máquinas eléctricas
 ...
 
+## Control de máquinas eléctricas con Matlab
 ### Contenido
 
 1. Control digital para motores
