@@ -1,6 +1,6 @@
 ---
 title: Procedimiento de discretización
-layout: default
+layout: post
 ...
 
 A continuación, se aprenderá a obtener funciones de transferencia discretas a
