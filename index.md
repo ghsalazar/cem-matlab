@@ -9,6 +9,7 @@ Bienvenidos al curso de **Control de Máquinas Eléctricas con Matlab**.
     1. [Fundamentos de control
        discreto](docs/fundamentos-control-discreto.html).
     2. [Transformación bilineal](docs/transformacion-bilineal.html).
+    3. [Procedimiento de discretización](docs/procedimiento-discretizacion.html)
 2. Control de velocidad en lazo abierto de motores de CD
 3. Control de velocidad en lazo cerrado de motores de CD
 4. Control de par en lazo cerrado de motores de CD
