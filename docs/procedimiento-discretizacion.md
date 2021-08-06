@@ -51,5 +51,5 @@ y la aproximación hacia atrás de Euler, definida como
 $$s=\frac{z-1}{hz}$$
 
 En la publicación [Computing transfer function Cd(z)
-(pag.7)](http://www-verimag.imag.fr/~tdang/DocumentsCours/2013Discretization.pdf#page=3),
+(pag.7)](http://www-verimag.imag.fr/~tdang/DocumentsCours/2013Discretization.pdf#page=7),
 se puede revisar esto.
