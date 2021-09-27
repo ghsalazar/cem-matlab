@@ -4,25 +4,23 @@ layout: post
 lang: es
 ...
 
-Para controlar un motor es muy importante saber como va a reaccionar éste a
-cambios en la señal de control.
+Como mencionamos anteriormete, para controlar un motor es muy importante saber
+como va a reaccionar éste a cambios en la señal de control.
 
-Para describir el comportamiento de un motor de
-CD, existen varias maneras.
+Anteriormente, describimos este comportamiento por medio de ecuaciones
+diferenciales y el modelo de régimen permanente. Cada modelo tiene su utilidad.
+Las ecuaciones diferenciales se aplican para analizar el sistema en el estado
+transitorio.
 
-    ecuaciones diferenciales;
-    función de transferencia;
+Por otro lado, el modelo de régimen permanente se aplica para el análisis del
+comportamiento del motor de CD cuando se requiere una velocidad constante.
+También este modelo se aplica para seleccionar el motor.
  
-En esta lección nos concentraremos en las
-siguientes:     y
-    modelo de régimen permanente.
+Ahora nos concentraremos en la función de transferencia del motor de CD para
+velocidad. Esta descripción se aplica para analizar el motor en frecuencia y
+diseñar controladores.
 
-Cada modelo tiene su utilidad. Las ecuaciones diferenciales se aplican para analizar el sistema en el estado transitorio.
-
-La función de transferencia se aplica para analizar el motor en frecuencia y diseñar controladores.
-
-Por otro lado, el modelo de régimen permanente se aplica para el análisis del comportamiento del motor de CD cuando se requiere una velocidad constante. También este modelo se aplica para seleccionar el motor.
-## Función de transferencia
+## Función de transferencia con respecto a la velocidad
 
 En un sistema dinámico, la función de transferencia es la relación entre las
 transformadas de Laplace de la salida y la entrada.
@@ -45,7 +43,7 @@ A partir de estas ecuaciones se puede obtener el diagrama de bloques del motor,
 donde la entrada es el voltaje de armadura, va, y la salida es la velocidad
 angular, ω. El diagrama se puede ver en la siguiente figura.
 
-![Diagrama de bloques de un motor de CD](../images/modelo-motor-cd-velocidad-1.svg){: width="00%"}
+![Diagrama de bloques de un motor de CD](../images/modelo-motor-cd-velocidad-1.svg){: width="100%"}
 
 Aplicando el [algebra de bloques], podemos obtener la función de transferencia
 total, $M(s)$:
