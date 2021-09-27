@@ -1,11 +1,11 @@
 ---
-title: Fundamentos de control discreto
+title: Función de transferencia del motor de CD
 layout: post
 lang: es
 ...
 
-transformadas de Laplace de la salida y la entrada.
 En un sistema dinámico, la función de transferencia es la relación entre las
+transformadas de Laplace de la salida y la entrada.
 
 Si aplicamos la transformada de Laplace a las ecuaciones diferenciales lineales
 y se asumen condiciones iniciales cero, se obtiene
@@ -25,7 +25,7 @@ A partir de estas ecuaciones se puede obtener el diagrama de bloques del motor,
 donde la entrada es el voltaje de armadura, va, y la salida es la velocidad
 angular, ω. El diagrama se puede ver en la siguiente figura.
 
-![Diagrama de bloques de un motor de CD](../images/modelo-motor-cd-velocidad-1.svg)
+![Diagrama de bloques de un motor de CD](../images/modelo-motor-cd-velocidad-1.svg){width=100%}
 
 Aplicando el [algebra de bloques], podemos obtener la función de transferencia total, $M(s)$:
 
