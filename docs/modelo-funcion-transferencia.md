@@ -23,4 +23,6 @@ $$\Omega(s) = \frac{1}{J s + B} K_t^* I_a(s)$$
 
 A partir de estas ecuaciones se puede obtener el diagrama de bloques del motor,
 donde la entrada es el voltaje de armadura, va, y la salida es la velocidad
-angular, ω. El diagrama se puede ver en la siguiente figura. 
+angular, ω. El diagrama se puede ver en la siguiente figura.
+
+![Diagraba de bloques de un motor de CD](images/modelo-motor-cd-velocidad-1.svg)
