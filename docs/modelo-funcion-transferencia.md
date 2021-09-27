@@ -25,7 +25,7 @@ A partir de estas ecuaciones se puede obtener el diagrama de bloques del motor,
 donde la entrada es el voltaje de armadura, va, y la salida es la velocidad
 angular, ω. El diagrama se puede ver en la siguiente figura.
 
-![Diagrama de bloques de un motor de CD](../images/modelo-motor-cd-velocidad-1.svg){width=100%}
+![Diagrama de bloques de un motor de CD](../images/modelo-motor-cd-velocidad-1.svg){: width=100%}
 
 Aplicando el [algebra de bloques], podemos obtener la función de transferencia total, $M(s)$:
 
