@@ -25,4 +25,14 @@ A partir de estas ecuaciones se puede obtener el diagrama de bloques del motor,
 donde la entrada es el voltaje de armadura, va, y la salida es la velocidad
 angular, ω. El diagrama se puede ver en la siguiente figura.
 
-![Diagraba de bloques de un motor de CD](images/modelo-motor-cd-velocidad-1.svg)
+![Diagrama de bloques de un motor de CD](../images/modelo-motor-cd-velocidad-1.svg)
+
+Aplicando el [algebra de bloques], podemos obtener la función de transferencia total, $M(s)$:
+
+$$M(s) = \frac{K_t^*}{\left( L_a s +R_a \right)\left( J s + B \right) + K_t^* K_v^*}$$
+
+Esta función de transferencia también se puede expresar, tal como se vio en control clásico, de la forma
+
+$$M(s) = K_cd \frac{\omega^2}{s^2 + 2\zeta\omega + \omega^2}$$
+
+donde la constante $K_cd$ es la ganancia de estado estacionario del motor, la constante $\omega_n$ es la frecuencia natural del motor, y la constante $\zeta$ es el amortiguamiento del motor.
