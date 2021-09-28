@@ -65,9 +65,16 @@ Es importante remarcar que en estado estacionario se tiene que
 
 $$\lim_{s\to 0} M(s)= \lim_{s\to 0} K_{cd} \frac{\omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2}$$
 
-Es decir que para obtener $k_{cd}$ se aplica un voltaje constante de armadura, $V_a$, y
+Es decir que para obtener $K_{cd}$ se aplica un voltaje constante de armadura, $V_a$, y
 se obtiene una velocidad angular en estado estacionario, $\omega^*$. Luego, $K_{cd}$ se
 calcula de la siguiente forma
 
 $$K_{cd} = \frac{\omega^*}{V_a}.$$
 
+## Conclusiones
+
+En esta lección aprendimos a describir el comportamiento de un motor de CD por
+medio de la función de transferencia.
+
+La función de transferencia es útil para analizar el motor en frecuencia y
+diseñar controladores.
