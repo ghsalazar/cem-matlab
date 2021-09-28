@@ -4,8 +4,8 @@ layout: post
 lang: es
 ...
 
-Como mencionamos anteriormete, para controlar un motor es muy importante saber
-como va a reaccionar éste a cambios en la señal de control.
+Como mencionamos anteriormente, para controlar un motor es muy importante saber
+cómo va a reaccionar éste a cambios en la señal de control.
 
 Anteriormente, describimos este comportamiento por medio de ecuaciones
 diferenciales y el modelo de régimen permanente. Cada modelo tiene su utilidad.
@@ -20,7 +20,7 @@ Ahora nos concentraremos en la función de transferencia del motor de CD para
 velocidad. Esta descripción se aplica para analizar el motor en frecuencia y
 diseñar controladores.
 
-## Función de transferencia con respecto a la velocidad
+## Simplificación del modelo dinámico
 
 En un sistema dinámico, la función de transferencia es la relación entre las
 transformadas de Laplace de la salida y la entrada. Para obtener la función de
@@ -38,11 +38,11 @@ una perturbación en la forma del par de carga, $\tau_L$.
 Para simplificar la obtención de la función de transferencia, haremos dos
 suposiciones:
 
-#. El voltaje de campo, $v_f$, es constante.
-#. El par de carga, $\tau_L$, es despreciable.
+1. El voltaje de campo, $v_f$, es constante.
+2. El par de carga, $\tau_L$, es despreciable.
 
 La primera suposición es común, ya que se utiliza normalmente el voltaje de
-armadura, $v_a$, para controlar el motor. Por lo tanto lo normal es aplicar un
+armadura, $v_a$, para controlar el motor. Por lo tanto, lo normal es aplicar un
 voltaje constante en el campo.
 
 Como resultado de esta suposición, tenemos que en estado estacionario la
@@ -64,8 +64,11 @@ definidas por
 $$K_v^* = K_v i_f, \tag{6}$$
 $$K_t^* = K_t i_f, \tag{7}$$
 
-Si aplicamos la transformada de Laplace a las ecuaciones (4) y (5)
-y se asumen condiciones iniciales cero, se obtiene
+## Función de transferencia con respecto a la velocidad
+
+Una vez simplificado el modelo dinámico, aplicamos la transformada de Laplace a
+las ecuaciones (4) y (5), asumimos condiciones iniciales cero y obtenemos las
+expresiones 
 
 $$L_a s I_a(s) + R_a I_a(s) = V_a(s) - K_v^* \Omega(s) \tag{8}$$
 $$J s\Omega(s) + B\Omega(s) = K_t^* I_a(s) \tag{9}$$
@@ -83,32 +86,69 @@ angular, $\omega$. El diagrama se puede ver en la siguiente figura.
 
 ![Diagrama de bloques de un motor de CD](../images/modelo-motor-cd-velocidad-1.svg){: width="100%"}
 
-Aplicando el [algebra de bloques], podemos obtener la función de transferencia
-total, $M(s)$:
+Aplicando el [algebra de
+bloques](https://www.tutorialspoint.com/control_systems/control_systems_block_diagram_algebra.htm),
+podemos obtener la función de transferencia total, $M(s)$:
 
-$$M(s) = \frac{K_t^*}{\left( L_a s +R_a \right)\left( J s + B \right) + K_t^* K_v^*}$$
+$$M(s) = \frac{K_t^*}{\left( L_a s +R_a \right)\left( J s + B \right) + K_t^*
+K_v^*} \tag{12}$$
 
-Esta función de transferencia también se puede expresar, tal como se vio en
+### Ejemplo
+
+Sea un motor de CD con una resistencia de armadura de $1\;\Omega$, una
+inductancia de armadura de 0.5 H y asuma que la magnitud de ambas constantes
+$K_v^*$ y $K_t^*$ es 0.01. Por otro lado, el momento de inercia del rotor es de
+0.01 Kg$\cdot$m y la fricción viscosa es 0.1 N.m.s/rad. Obtenga la función de
+transferencia.
+
+#### Solución
+
+$$M(s) = \frac{0.01}{\left( 0.5 s + 1 \right)\left( 0.01 s + 0.1 \right) + 0.0001}$$
+
+
+## Velocidad en estado estacionario
+
+La función de transferencia (12) también se puede expresar, tal como se vio en
 control clásico, de la forma
 
-$$M(s) = K_{cd} \frac{\omega^2}{s^2 + 2\zeta\omega + \omega^2}$$
+$$M(s) = K_{cd} \frac{\omega^2}{s^2 + 2\zeta\omega + \omega^2} \tag{13}$$
 
 donde la constante $K_{cd}$ es la ganancia de estado estacionario del motor, la
 constante $\omega_n$ es la frecuencia natural del motor, y la constante $\zeta$
 es el amortiguamiento del motor.
 
-## Velocidad en estado estacionario
-
 Es importante remarcar que en estado estacionario se tiene que
 
-$$\lim_{s\to 0} M(s)= \lim_{s\to 0} K_{cd} \frac{\omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2}$$
+$$\lim_{s\to 0} M(s)= \lim_{s\to 0} K_{cd} \frac{\omega_n^2}{s^2 +
+2\zeta\omega_n s + \omega_n^2} \tag{14}$$
 
 Es decir que para obtener $K_{cd}$ se aplica un voltaje constante de armadura, $V_a$, y
 se obtiene una velocidad angular en estado estacionario, $\omega^*$. Luego, $K_{cd}$ se
 calcula de la siguiente forma
 
-$$K_{cd} = \frac{\omega^*}{V_a}.$$
+$$K_{cd} = \frac{\omega^*}{V_a}. \tag{15}$$
 
+### Ejemplo
+
+Sea un motor de CD con un valor nominal de velocidad de 1000 RPM a 120 V.
+Obtenga la constante de CD.
+
+#### Solución
+
+El primer paso será convertir las unidades de la velocidad angular
+
+$$\omega^* = 1000 \mathrm{RPM} \frac{2\pi\;\mathrm{rad}}{1\;\mathrm{revolución}} 
+             \frac{1\;\mathrm{minuto}}{60\;\mathrm{s}}$$
+
+$$\omega^* = 104.7\;\frac{\mathrm{rad}}{\mathrm{s}}$$
+
+Luego sustituimos en la ecuación (15) los valores correspondientes
+
+$$K_{cd} = \frac{104.7\;\frac{\mathrm{rad}}{\mathrm{s}}}{120\;\mathrm{V}}$$
+
+Con lo que tenemos de resultado.
+
+$$K_{cd} = 0.8725\;\frac{\mathrm{rad}}{\mathrm{Vs}}$$
 ## Conclusiones
 
 En esta lección aprendimos a describir el comportamiento de un motor de CD por
