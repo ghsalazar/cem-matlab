@@ -52,27 +52,34 @@ En cuanto a la segunda suposición, normalmente se utiliza una transmisión
 reductora entre el motor y la carga, por lo que el par de carga se ve disminuido
 notablemente.
 
-$$L_a\frac{di_a}{dt} + R_a i_a = v_a - K_v i_f \omega \tag{4}$$
-$$J \frac{d\omega}{dt} + B\omega = K_t i_f i_a + \tau_L \tag{5}$$
+Aplicando estas suposiciones a las ecuaciones (1), (2) y (3), el sistema
+dinámico se reduce a las siguientes ecuaciones
 
+$$L_a\frac{di_a}{dt} + R_a i_a = v_a - K_v^* \omega \tag{4}$$
+$$J \frac{d\omega}{dt} + B\omega = K_t^* i_a \tag{5}$$
 
-Si aplicamos la transformada de Laplace a las ecuaciones diferenciales lineales
+donde se tienen dos nuevas constantes $K_v^*$ y $K_t^*$, las cuales están
+definidas por
+
+$$K_v^* = K_v i_f, \tag{6}$$
+$$K_t^* = K_t i_f, \tag{7}$$
+
+Si aplicamos la transformada de Laplace a las ecuaciones (4) y (5)
 y se asumen condiciones iniciales cero, se obtiene
 
-$$L_a s I_a(s) + R_a I_a(s) = V_a(s) - K_v^* \Omega(s)$$
-
-$$J s\Omega(s) + B\Omega(s) = K_t^* I_a(s)$$
+$$L_a s I_a(s) + R_a I_a(s) = V_a(s) - K_v^* \Omega(s) \tag{8}$$
+$$J s\Omega(s) + B\Omega(s) = K_t^* I_a(s) \tag{9}$$
 
 Si despejamos las salidas, ambas ecuaciones se pueden expresar a partir de dos
 funciones de transferencia
 
-$$I_a(s) = \frac{1}{L_a s + R_a} \left( V_a(s) - K_v^* \Omega(s) \right)$$
+$$I_a(s) = \frac{1}{L_a s + R_a} \left( V_a(s) - K_v^* \Omega(s) \right) \tag{10}$$
 
-$$\Omega(s) = \frac{1}{J s + B} K_t^* I_a(s)$$
+$$\Omega(s) = \frac{1}{J s + B} K_t^* I_a(s) \tag{11}$$
 
 A partir de estas ecuaciones se puede obtener el diagrama de bloques del motor,
-donde la entrada es el voltaje de armadura, va, y la salida es la velocidad
-angular, ω. El diagrama se puede ver en la siguiente figura.
+donde la entrada es el voltaje de armadura, $v_a$, y la salida es la velocidad
+angular, $\omega$. El diagrama se puede ver en la siguiente figura.
 
 ![Diagrama de bloques de un motor de CD](../images/modelo-motor-cd-velocidad-1.svg){: width="100%"}
 
