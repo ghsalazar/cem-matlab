@@ -97,7 +97,7 @@ K_v^*} \tag{12}$$
 
 Sea un motor de CD con una resistencia de armadura de $1\;\Omega$, una
 inductancia de armadura de 0.5 H y asuma que la magnitud de ambas constantes
-$K_v^{*}$ y $K_t^{*}$ es 0.01. Por otro lado, el momento de inercia del rotor es de
+$K_v^\star$ y $K_t^\star$ es 0.01. Por otro lado, el momento de inercia del rotor es de
 0.01 Kg$\cdot$m y la fricción viscosa es 0.1 N.m.s/rad. Obtenga la función de
 transferencia.
 
