@@ -23,7 +23,31 @@ diseñar controladores.
 ## Función de transferencia con respecto a la velocidad
 
 En un sistema dinámico, la función de transferencia es la relación entre las
-transformadas de Laplace de la salida y la entrada.
+transformadas de Laplace de la salida y la entrada. Para obtener la función de
+transferencia del motor de CD, partiremos de las ecuaciones diferenciales del
+motor que ya vimos:
+
+$$L_a\frac{di_a}{dt} + R_a i_a = v_a - K_v i_f \omega \tag{1}$$
+$$L_f\frac{di_f}{dt} + R_f i_f = v_f$$
+$$J \frac{d\omega}{dt} + B\omega = K_t i_f i_a + \tau_L$$
+
+El problema con las ecuaciones anteriores es que tienen dos componentes
+bilineales, dados por los productos $i_f i_a$ y $i_f \omega$. También tenemos
+una perturbación en la forma del par de carga, $\tau_L$.
+
+Para simplificar la obtención de la función de transferencia, haremos dos
+suposiciones:
+
+#. El voltaje de campo, $v_f$, es constante.
+#. El par de carga, $\tau_L$, es despreciable.
+
+La primera suposición es común, ya que se utiliza normalmente el voltaje de
+armadura, $v_a$, para controlar el motor. Por lo tanto lo normal es aplicar un
+voltaje constante en el campo.
+
+En cuanto a la segunda suposición, normalmente se utiliza una transmisión
+reductora entre el motor y la carga, por lo que el par de carga se ve disminuido
+notablemente.
 
 Si aplicamos la transformada de Laplace a las ecuaciones diferenciales lineales
 y se asumen condiciones iniciales cero, se obtiene
