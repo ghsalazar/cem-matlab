@@ -1,7 +1,7 @@
 ---
-title: Control de velocidad en lazo cerrado para un motor de CD
+title:  Control de velocidad en lazo cerrado para un motor de CD
 author: Gastón Hugo Salazar Silva
-layout; post
+layout: post
 ...
 
 ## Introducción
@@ -113,8 +113,10 @@ bloque de "Controlador PID", como se puede ver en la figura 3.
 |---|
 |Figura 3: Parámetros del bloque de "Controlador PID".|
 
-El resultado obtenido aparece en la figura 6.
+El resultado obtenido aparece en la figura 4.
 
-Figura 6: Comportamiento del sistema de control de velocidad en lazo cerrado.
+|![Comportamiento del sistema de control de velocidad en lazo cerrado](../assets/figures/control-velocidad-lazo-cerrado-cd-resultado.png)|
+|---|
+|Figura 4: Comportamiento del sistema de control de velocidad en lazo cerrado.|
 
 Como se puede apreciar, la reacción del sistema de control en lazo cerrado es más rápida que en lazo abierto.
