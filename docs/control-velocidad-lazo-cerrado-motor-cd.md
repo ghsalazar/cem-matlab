@@ -25,9 +25,7 @@ función de transferencia $C(s)$ es el controlador.
 
 |![control-velocidad-lazo-cerrado-cd](../assets/figures/control-velocidad-lazo-cerrado-cd.png)|
 |------------------------------------------------------------|
-|Figura 1: Diagrama de bloques del sistema de control. La función de
-transferencia $H(s)$ corresponde al motor de CD, y la función de
-transferencia $C(s)$ al controlador.|
+|Figura 1: Diagrama de bloques del sistema de control. La función de transferencia $H(s)$ corresponde al motor de CD, y la función de transferencia $C(s)$ al controlador.|
 
 
 ### Controlador PID de banda limitada
