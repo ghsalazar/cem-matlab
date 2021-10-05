@@ -15,17 +15,22 @@ a que hay que incorporar un sensor y un posiblemente controlador más sofisticad
 que en el caso de lazo abierto, así como toda la electrónica para realizar la
 interfaz entre componentes.
 
+Otro costo de un sistema en lazo cerrado, es requerimos realizar un análisis más
+complejo, ya que el sistema se puede volver inestable.
+
 La figura 1 muestra el sistema de control de velocidad en lazo cerrado para un
-motor de CD en el dominio continuo.
+motor de CD en el dominio continuo. La función de transferencia $H(s)$
+corresponde a la planta, que en este caso es el motor de CD. Por otro lado, la
+función de transferencia $C(s)$ es el controlador.
 
 |![control-velocidad-lazo-cerrado-cd](../assets/figures/control-velocidad-lazo-cerrado-cd.png)|
 |------------------------------------------------------------|
-|Figura 1: Diagrama de bloques del sistema de control|
+|Figura 1: Diagrama de bloques del sistema de control. La función de
+transferencia $H(s)$ corresponde al motor de CD, y la función de
+transferencia $C(s)$ al controlador.|
 
-Por otro lado, en un sistema en lazo cerrado requerimos realizar un análisis más
-complejo, ya que el sistema se puede volver inestable.
 
-### Controlador PID
+### Controlador PID de banda limitada
 
 Como se vio anteriormente, un motor de CD con voltaje de campo constante se
 puede modelar como un sistema lineal de segundo orden. Un controlador adecuado
