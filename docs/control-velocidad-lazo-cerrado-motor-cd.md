@@ -4,6 +4,8 @@ author: Gastón Hugo Salazar Silva
 layout; post
 ...
 
+## Introducción
+
 En esta lección, analizaremos un sistema de control de velocidad en lazo cerrado
 para un motor de CD, el cual sintonizaremos.
 
@@ -70,7 +72,10 @@ En la figura 2, podemos ver el modelo de Simscape de un sistema de control de ve
 |---|
 |Figura 2: Modelo de Simscape de un sistema de control de velocidad en lazo cerrado para un motor de CD en el dominio continuo.|
 
-Los parámetros del motor de CD están dados por el siguiente código Matlab.
+Para modelar el motor, utilizamos nuevamente los parámetros publicados en [DC
+Motor Speed: System
+Modeling](https://ctms.engin.umich.edu/CTMS/index.php?example=MotorSpeed&section=SystemModeling),
+y que se muestran a continuación en código Matlab.
 
 ~~~
 J = 0.01;
@@ -81,29 +86,32 @@ L = 0.5;
 ~~~
 
 Si bien, Simulink dispone en la librería componentes para implementar PID,
-decidimos utilizar la función de transferencia descrita en la ecuación 5. Para
-modelar el motor, utilizamos nuevamente los parámetros publicados en DC Motor
-Speed: System Modeling (ver figura 3).
+decidimos utilizar la función de transferencia descrita en la ecuación (5). En
+cuanto a los coeficientes del controlador PID, utilizamos los obtenidos para el
+mismo motor en la publicación [DC Motor Speed: System
+Modeling](https://ctms.engin.umich.edu/CTMS/index.php?example=MotorSpeed&section=SystemModeling),
+y que se muestran a continuación en código Matlab.
 
-
+~~~
 Kp = 100;
 Ki = 200;
 Kd = 10;
 N = 100;
+~~~
 
-Figura 4: Código Matlab para los coeficientes del controlador PID.
+Si aplicamos estos coeficientes a la ecuación (5), obtenemos la siguiente
+función de transferencia para el PID
 
-En cuanto a los coeficientes del controlador PID, utilizamos los obtenidos para
-el mismo motor en la publicación DC Motor Speed: PID Controller Design (ver
-figura 4). Si aplicamos estos coeficientes a la ecuación (5), obtenemos la
-siguiente función de transferencia para el PID
-
-(6)                                     
+$$C(s) = \frac{1100s^2 + 10200s + 20000}{s^2 + 100s} \tag{6}$$                                     
 
 Con la función de transferencia (6), la aplicamos al modelo de la figura 2 en el
-bloque de "Controlador PID", como se puede ver en la figura 5.
+bloque de "Controlador PID", como se puede ver en la figura 3.
 
-Figura 5: Parámetros del bloque de "Controlador PID".
+
+
+|![Parámetros del bloque de "Controlador PID"](../assets/figures/parametros-pid.png)|
+|---|
+|Figura 3: Parámetros del bloque de "Controlador PID".|
 
 El resultado obtenido aparece en la figura 6.
 
