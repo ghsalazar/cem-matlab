@@ -1,5 +1,5 @@
 ---
-title:  Control de velocidad en lazo cerrado para un motor de CD
+title:  Control de velocidad en lazo cerrado para un motor de CD en el dominio continuo
 author: Gastón Hugo Salazar Silva
 layout: post
 ...
@@ -8,8 +8,6 @@ layout: post
 
 En esta lección, analizaremos un sistema de control de velocidad en lazo cerrado
 para un motor de CD, el cual sintonizaremos.
-
-## Sistema de control de velocidad en lazo cerrado para un motor de CD en dominio continuo
 
 ### Controlador PID
 
@@ -33,14 +31,16 @@ $$e(t) = r(t) - y(t) \tag{2}$$
 donde $r(t)$ es la señal de referencia y $y(t)$ es la medición de salida de la
 planta, en este caso la velocidad angular.
 
-La función de transferencia de (1), C(s), esta dada por la expresión
+Para implementar el controlador PID en Simulink se utilizará l|a función de
+transferencia de (1), C(s), la cual está dada por la expresión
 
 $$C(s) = K_p + \frac{K_i}{s} + K_d s \tag{3}$$
 
-El principal problema con esta función es que no es propia, y por lo tanto se
-complica su implementación. Otro problema reside en que el derivador es un
-filtro pasa-altas con su polo en el infinito, y por lo tanto amplifica altas
-frecuencias.
+El principal problema con la función de transferencia (3) es que no es propia, y
+por lo tanto se complica su implementación.
+
+Otro problema reside en que el derivador es un filtro pasa-altas con su polo en
+el infinito, y por lo tanto amplifica altas frecuencias.
 
 Una forma de resolver ambos problemas es utilizar la siguiente variante del PID
 
@@ -119,4 +119,10 @@ El resultado obtenido aparece en la figura 4.
 |---|
 |Figura 4: Comportamiento del sistema de control de velocidad en lazo cerrado.|
 
-Como se puede apreciar, la reacción del sistema de control en lazo cerrado es más rápida que en lazo abierto.
+
+|![Respuesta en lazo abierto del motor de CD a una entrada escalón](../assets/figures/motor-cd-respuesta-escalon.png)|
+|---|
+|Figura 5: Respuesta en lazo abierto del motor de CD a una entrada escalón|
+
+Como se puede apreciar, la reacción del sistema de control en lazo cerrado es
+más rápida que en lazo abierto.
